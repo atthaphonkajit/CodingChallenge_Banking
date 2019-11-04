@@ -1,0 +1,70 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 20px;
+}
+
+.body {
+    width: 100%;
+    min-height: 90vh;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    background-color: #ecfcff;
+}
+
+.page-header {
+    width: 100%;
+    font-size: 2rem;
+    background-color: #010038;
+    padding-bottom: 1%;
+    color: #FFFFFF;
+}
+
+footer {
+    width: 100%;
+    height: 5.1vh;
+    font-size: 0.7rem;
+}
+
+footer p {
+    color: white;
+    width: 100%;
+}
+
+.long-word {
+    width: 165px !important;
+}
+.short-word {
+    width: 65px !important;
+}
+
+.input-group-text {
+    width: 120px;
+}
+
+#rdDeposit {
+    padding-left: 20px;
+}
+
+#rdWithdraw
+{
+    padding-left: 20px;
+}
+
+.add-space {
+    margin-top: 15px;
+}
+
+.decimal {
+    width: 8px !important;
+}
+
+.decimal-text {
+    width: 50px !important;
+    border: 1px solid #ced4da;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    padding-right: 5px !important;
+}
