@@ -27,32 +27,38 @@ namespace CodingChallenge_Banking
                     SearchAccount(iban);
                 }
             }
+
+            ResetAlert();
+        }
+
+        private void ResetAlert()
+        {
+            string alertClass = "alert alert-danger d-none";
+            string alertText = "";
+
+            alert_btnSearchAccount.Attributes.Add("class", alertClass);
+            alert_btnSearchAccount.InnerText = alertText;
+
+            alert_btnCreateTransaction.Attributes.Add("class", alertClass);
+            alert_btnCreateTransaction.InnerText = alertText;
         }
 
         private void SetAlertDisplay(string alertID, string alertText)
         {
             string alertClass = "alert alert-danger";
 
+            ResetAlert();
+
             if (alertID == "alert_btnSearchAccount")
             {
                 alert_btnSearchAccount.Attributes.Add("class", alertClass);
                 alert_btnSearchAccount.InnerText = alertText;
-            }
-            else
-            {
-                alert_btnSearchAccount.Attributes.Add("class", alertClass + " d-none");
-                alert_btnSearchAccount.InnerText = "";
             }
 
             if (alertID == "alert_btnCreateTransaction")
             {
                 alert_btnCreateTransaction.Attributes.Add("class", alertClass);
                 alert_btnCreateTransaction.InnerText = alertText;
-            }
-            else
-            {
-                alert_btnCreateTransaction.Attributes.Add("class", alertClass + " d-none");
-                alert_btnCreateTransaction.InnerText = "";
             }
         }
 
@@ -78,7 +84,7 @@ namespace CodingChallenge_Banking
                 txtLastname.Text = accountInfo.lastname;
                 if (accountInfo.accountBalance > 0)
                 {
-                    txtBalance.Text = accountInfo.accountBalance.ToString("#.##");
+                    txtBalance.Text = (Math.Floor(accountInfo.accountBalance*100)/100).ToString();
                 }
                 else
                 {
@@ -110,16 +116,27 @@ namespace CodingChallenge_Banking
             {
                 depositAmount = Convert.ToDecimal(number + "." + deci);
 
-                if (dc.Deposit(txtIBAN.Text, depositAmount))
+                if (depositAmount > 0)
                 {
-                    //Response.Redirect("Deposit.aspx?IBAN=" + txtIBAN.Text);
-                    ScriptManager.RegisterStartupScript(this, this.GetType(),"alert","alert('The given amount has been deposit');window.location ='Deposit.aspx?IBAN="+ txtIBAN.Text + "';",true);
+                    if (dc.Deposit(txtIBAN.Text, depositAmount))
+                    {
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('The given amount has been deposit into "+txtFirstName.Text+" "+txtMiddleName.Text+" "+txtLastname.Text+" IBAN:"+txtIBAN.Text+"');window.location ='Deposit.aspx?IBAN=" + txtIBAN.Text + "';", true);
+                    }
+                    else
+                    {
+                        SetAlertDisplay("alert_btnCreateTransaction", "Cannot deposit due to technical issue");
+                    }
                 }
                 else
                 {
-                    SetAlertDisplay("alert_btnCreateTransaction", "Cannot deposit due to technical issue");
+                    SetAlertDisplay("alert_btnCreateTransaction", "Please deposit more than 0 BAHT");
                 }
             }
+        }
+
+        protected void btnTransfer_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Transfer.aspx?IBAN=" + txtIBAN.Text);
         }
     }
 }

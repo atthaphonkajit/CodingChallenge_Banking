@@ -18,44 +18,44 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">SEARCH IBAN</span>
                                 </div>
-                                <asp:TextBox CssClass="form-control" ID="txtSearchIBAN" runat="server"></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="txtSearchIBAN_TransferFrom" runat="server"></asp:TextBox>
                             </div>
                             <div class="text-center add-space">
-                                <asp:Button CssClass="btn btn-primary" ID="btnSerchAccount" runat="server" Text="Search" />
+                                <asp:Button CssClass="btn btn-primary" ID="btnSearchAccount_TransferFrom" runat="server" Text="Search" OnClick="btnSearchAccount_TransferFrom_Click" />
                             </div>
                             <div class="text-center add-space">
-                                <div id="alert_btnSerchAccount" class="alert alert-danger d-none" role="alert" runat="server"></div>
+                                <div id="alert_btnSearchAccount_TransferFrom" class="alert alert-danger d-none" role="alert" runat="server"></div>
 
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">IBAN</span>
                                 </div>
-                                <asp:TextBox CssClass="form-control" ID="txtIBAN" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="txtIBAN_TransferFrom" runat="server" Enabled="false"></asp:TextBox>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Firstname</span>
                                 </div>
-                                <asp:TextBox CssClass="form-control" ID="txtFirstName" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="txtFirstName_TransferFrom" runat="server" Enabled="false"></asp:TextBox>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Middlename</span>
                                 </div>
-                                <asp:TextBox CssClass="form-control" ID="txtMiddleName" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="txtMiddleName_TransferFrom" runat="server" Enabled="false"></asp:TextBox>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Lastname</span>
                                 </div>
-                                <asp:TextBox CssClass="form-control" ID="txtLastname" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="txtLastname_TransferFrom" runat="server" Enabled="false"></asp:TextBox>
                             </div>
                             <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Balance</span>
                             </div>
-                            <asp:TextBox CssClass="form-control" ID="txtBalance" runat="server" Enabled="false"></asp:TextBox>
+                            <asp:TextBox CssClass="form-control" ID="txtBalance_TransferFrom" runat="server" Enabled="false"></asp:TextBox>
                             <div class="short-word input-group-append">
                                 <span class="input-group-text">BAHT</span>
                             </div>
@@ -75,38 +75,38 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">SEARCH IBAN</span>
                                 </div>
-                                <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server"></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="txtSearchIBAN_TransferTo" runat="server"></asp:TextBox>
                             </div>
                             <div class="text-center add-space">
-                                <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Search" />
+                                <asp:Button CssClass="btn btn-primary" ID="btnSearchAccount_TransferTo" runat="server" Text="Search" OnClick="btnSearchAccount_TransferTo_Click" />
                             </div>
                             <div class="text-center add-space">
-                                <div id="Div1" class="alert alert-danger d-none" role="alert" runat="server"></div>
+                                <div id="alert_btnSearchAccount_TransferTo" class="alert alert-danger d-none" role="alert" runat="server"></div>
 
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">IBAN</span>
                                 </div>
-                                <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="txtIBAN_TransferTo" runat="server" Enabled="false"></asp:TextBox>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Firstname</span>
                                 </div>
-                                <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="txtFirstName_TransferTo" runat="server" Enabled="false"></asp:TextBox>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Middlename</span>
                                 </div>
-                                <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="txtMiddleName_TransferTo" runat="server" Enabled="false"></asp:TextBox>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Lastname</span>
                                 </div>
-                                <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="txtLastname_TransferTo" runat="server" Enabled="false"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -124,13 +124,17 @@
                             <div class="input-group-prepend">
                                 <span class="long-word input-group-text">Transfer Amount</span>
                             </div>
-                            <asp:TextBox CssClass="form-control" ID="txtTransactionAmount" runat="server"></asp:TextBox>
+                            <asp:TextBox CssClass="form-control text-right" ID="txtDepositNumber" runat="server"></asp:TextBox>
+                            <div class="input-group-prepend">
+                                <span class="long-word input-group-text decimal text-center">.</span>
+                            </div>
+                            <asp:TextBox CssClass="decimal-text text-right" ID="txtDepositDecimal" runat="server"></asp:TextBox>
                             <div class="short-word input-group-append">
                                 <span class="input-group-text">BAHT</span>
                             </div>
                         </div>
                         <div class="text-center add-space">
-                            <asp:Button CssClass="btn btn-primary" ID="btnCreateTransaction" runat="server" Text="Complete" />
+                            <asp:Button CssClass="btn btn-primary" ID="btnCreateTransaction" runat="server" Text="Complete" OnClick="btnCreateTransaction_Click" />
                         </div>
                         <div class="text-center add-space">
                             <div id="alert_btnCreateTransaction" class="alert alert-danger d-none" role="alert" runat="server"></div>

@@ -13,7 +13,7 @@ namespace CodingChallenge_Banking
         DataController dc = new DataController();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ResetAlert();
         }
 
         private void ResetAlert()
@@ -41,15 +41,12 @@ namespace CodingChallenge_Banking
         {
             string alertClass = "alert alert-danger";
 
+            ResetAlert();
+
             if (alertID == "alert_txtFirstName")
             {
                 alert_txtFirstName.Attributes.Add("class", alertClass);
                 alert_txtFirstName.InnerText = alertText;
-            }
-            else
-            {
-                alert_txtFirstName.Attributes.Add("class", alertClass + " d-none");
-                alert_txtFirstName.InnerText = "";
             }
 
             if (alertID == "alert_txtMiddleName")
@@ -57,21 +54,11 @@ namespace CodingChallenge_Banking
                 alert_txtMiddleName.Attributes.Add("class", alertClass);
                 alert_txtMiddleName.InnerText = alertText;
             }
-            else
-            {
-                alert_txtMiddleName.Attributes.Add("class", alertClass + " d-none");
-                alert_txtMiddleName.InnerText = "";
-            }
 
             if (alertID == "alert_txtLastname")
             {
                 alert_txtLastname.Attributes.Add("class", alertClass);
                 alert_txtLastname.InnerText = alertText;
-            }
-            else
-            {
-                alert_txtLastname.Attributes.Add("class", alertClass + " d-none");
-                alert_txtLastname.InnerText = "";
             }
 
             if (alertID == "alert_txtIBAN")
@@ -79,21 +66,11 @@ namespace CodingChallenge_Banking
                 alert_txtIBAN.Attributes.Add("class", alertClass);
                 alert_txtIBAN.InnerText = alertText;
             }
-            else
-            {
-                alert_txtIBAN.Attributes.Add("class", alertClass + " d-none");
-                alert_txtIBAN.InnerText = "";
-            }
 
             if (alertID == "alert_btnCreateAccount")
             {
                 alert_btnCreateAccount.Attributes.Add("class", alertClass);
                 alert_btnCreateAccount.InnerText = alertText;
-            }
-            else
-            {
-                alert_btnCreateAccount.Attributes.Add("class", alertClass + " d-none");
-                alert_btnCreateAccount.InnerText = "";
             }
         }
 
@@ -158,10 +135,10 @@ namespace CodingChallenge_Banking
         protected void btnCreateAccount_Click(object sender, EventArgs e)
         {
             Account account = new Account();
-            account.IBAN = txtIBAN.Text.ToLower().Trim();
-            account.firstname = txtFirstName.Text.ToLower().Trim();
-            account.middlename = txtMiddleName.Text.ToLower().Trim();
-            account.lastname = txtLastname.Text.ToLower().Trim();
+            account.IBAN = txtIBAN.Text.ToUpper().Trim();
+            account.firstname = txtFirstName.Text.ToUpper().Trim();
+            account.middlename = txtMiddleName.Text.ToUpper().Trim();
+            account.lastname = txtLastname.Text.ToUpper().Trim();
 
             if (ValidateAccount(account.firstname, account.middlename, account.lastname, account.IBAN))
             {

@@ -138,5 +138,37 @@ namespace CodingChallenge_Banking
             }
 
         }
+
+        public bool Transfer(string iban_TransferFrom,string iban_TransferTo, decimal depositAmount)
+        {
+            string stpName = "STP_ABank_Transfer";
+            SqlConnection conn = new SqlConnection(connStr);
+            SqlCommand cmd = new SqlCommand(stpName, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@IBAN_TransferFrom", SqlDbType.VarChar).Value = iban_TransferFrom;
+            cmd.Parameters.Add("@IBAN_TransferTo", SqlDbType.VarChar).Value = iban_TransferTo;
+            cmd.Parameters.Add("@DepositAmount", SqlDbType.VarChar).Value = depositAmount;
+            try
+            {
+                conn.Open();
+                int result = (Int32)cmd.ExecuteNonQuery();
+                conn.Close();
+
+                if (result == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }

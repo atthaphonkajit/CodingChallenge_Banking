@@ -70,6 +70,9 @@
                                 <span class="input-group-text">BAHT</span>
                             </div>
                         </div>
+                        <div class="text-center add-space">
+                            <asp:Button CssClass="btn btn-primary" ID="btnTransfer" runat="server" Text="Transfer from this account" OnClick="btnTransfer_Click" />
+                        </div>
                     </div>
                 </div>
             </div>

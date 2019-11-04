@@ -15,148 +15,157 @@ namespace CodingChallenge_Banking
     {
 
         /// <summary>
-        /// txtSearchIBAN control.
+        /// txtSearchIBAN_TransferFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSearchIBAN;
+        protected global::System.Web.UI.WebControls.TextBox txtSearchIBAN_TransferFrom;
 
         /// <summary>
-        /// btnSerchAccount control.
+        /// btnSearchAccount_TransferFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSerchAccount;
+        protected global::System.Web.UI.WebControls.Button btnSearchAccount_TransferFrom;
 
         /// <summary>
-        /// alert_btnSerchAccount control.
+        /// alert_btnSearchAccount_TransferFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert_btnSerchAccount;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert_btnSearchAccount_TransferFrom;
 
         /// <summary>
-        /// txtIBAN control.
+        /// txtIBAN_TransferFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIBAN;
+        protected global::System.Web.UI.WebControls.TextBox txtIBAN_TransferFrom;
 
         /// <summary>
-        /// txtFirstName control.
+        /// txtFirstName_TransferFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstName;
+        protected global::System.Web.UI.WebControls.TextBox txtFirstName_TransferFrom;
 
         /// <summary>
-        /// txtMiddleName control.
+        /// txtMiddleName_TransferFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMiddleName;
+        protected global::System.Web.UI.WebControls.TextBox txtMiddleName_TransferFrom;
 
         /// <summary>
-        /// txtLastname control.
+        /// txtLastname_TransferFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLastname;
+        protected global::System.Web.UI.WebControls.TextBox txtLastname_TransferFrom;
 
         /// <summary>
-        /// txtBalance control.
+        /// txtBalance_TransferFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBalance;
+        protected global::System.Web.UI.WebControls.TextBox txtBalance_TransferFrom;
 
         /// <summary>
-        /// TextBox1 control.
+        /// txtSearchIBAN_TransferTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtSearchIBAN_TransferTo;
 
         /// <summary>
-        /// Button1 control.
+        /// btnSearchAccount_TransferTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnSearchAccount_TransferTo;
 
         /// <summary>
-        /// Div1 control.
+        /// alert_btnSearchAccount_TransferTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert_btnSearchAccount_TransferTo;
 
         /// <summary>
-        /// TextBox2 control.
+        /// txtIBAN_TransferTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtIBAN_TransferTo;
 
         /// <summary>
-        /// TextBox3 control.
+        /// txtFirstName_TransferTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtFirstName_TransferTo;
 
         /// <summary>
-        /// TextBox4 control.
+        /// txtMiddleName_TransferTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox txtMiddleName_TransferTo;
 
         /// <summary>
-        /// TextBox5 control.
+        /// txtLastname_TransferTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox txtLastname_TransferTo;
 
         /// <summary>
-        /// txtTransactionAmount control.
+        /// txtDepositNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTransactionAmount;
+        protected global::System.Web.UI.WebControls.TextBox txtDepositNumber;
+
+        /// <summary>
+        /// txtDepositDecimal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDepositDecimal;
 
         /// <summary>
         /// btnCreateTransaction control.
