@@ -13,10 +13,7 @@ namespace CodingChallenge_Banking
         DataController dc = new DataController();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if(!Page.IsPostBack)
-            //{
 
-            //}
         }
 
         private void ResetAlert()
@@ -160,20 +157,28 @@ namespace CodingChallenge_Banking
 
         protected void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            string firstname = txtFirstName.Text.ToLower().Trim();
-            string middlename = txtMiddleName.Text.ToLower().Trim();
-            string lastname = txtLastname.Text.ToLower().Trim();
-            string iban = txtIBAN.Text.ToLower().Trim();
+            Account account = new Account();
+            account.IBAN = txtIBAN.Text.ToLower().Trim();
+            account.firstname = txtFirstName.Text.ToLower().Trim();
+            account.middlename = txtMiddleName.Text.ToLower().Trim();
+            account.lastname = txtLastname.Text.ToLower().Trim();
 
-            if (ValidateAccount(firstname, middlename, lastname, iban))
+            if (ValidateAccount(account.firstname, account.middlename, account.lastname, account.IBAN))
             {
-                if (dc.CheckDuplicateIBAN(iban))
+                if (dc.CheckDuplicateIBAN(account.IBAN))
                 {
-                    Response.Redirect("Deposit.aspx?IBAN="+ iban);
+                    if (dc.CreateAccount(account))
+                    {
+                        Response.Redirect("Deposit.aspx?IBAN=" + account.IBAN);
+                    }
+                    else
+                    {
+                        SetAlertDisplay("alert_btnCreateAccount", "Cannot create account due to technical issue");
+                    }
                 }
                 else
                 {
-                    SetAlertDisplay("alert_btnCreateAccount","This IBAN has been registered");
+                    SetAlertDisplay("alert_btnCreateAccount", "This IBAN has been registered");
                 }
             }
         }
